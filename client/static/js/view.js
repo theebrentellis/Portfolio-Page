@@ -104,22 +104,24 @@ var layout = function () {
             m("#projects_image", { id: "projects_image" }, m.trust(image("tools_image"))),
             m("#tools_quote", m.trust(tools_quote)),
             m("#tools_sections", { style: "display: block" }, [
-                m("#languages", m.trust(languages)),
-                m("#languages_icons", { style: "display:flex" }, [
-                    m.trust(icon("python")),
-                    m.trust(icon("swift")),
-                    m.trust(icon("javascript")),
+                m("#languages", m.trust(languages), [
+                    m("#languages_icons", { style: "display:flex" }, [
+                        m.trust(icon("python")),
+                        m.trust(icon("swift")),
+                        m.trust(icon("javascript")),
+                    ]),
                 ]),
-            ]),
-            m("#substance_style", m.trust(substance_style)),
-            m("#substance_style_icons", { style: "display:flex" }, [
-                m.trust(icon("html")),
-                m.trust(icon("css3")),
-                m.trust(icon("jquery")),
-                m.trust(icon("bootstrap")),
-                m.trust(icon("mongodb")),
-                m.trust(icon("angular")),
-                m.trust(icon("node")),
+                m("#substance_style", m.trust(substance_style), [
+                    m("#substance_style_icons", { style: "display:flex" }, [
+                        m.trust(icon("html")),
+                        m.trust(icon("css3")),
+                        m.trust(icon("jquery")),
+                        m.trust(icon("bootstrap")),
+                        m.trust(icon("mongodb")),
+                        m.trust(icon("angular")),
+                        m.trust(icon("node")),
+                    ]),
+                ]),
             ]),
             m("#projects_quote", m.trust(projects_quote)),
             m("#projects_text", m.trust(random_text)),

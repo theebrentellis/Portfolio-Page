@@ -50,7 +50,7 @@ nav {
     text-align: center;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
-#projects_technologies_icons,
+
 #social_media_icons {
     margin-left: auto;
     margin-right: auto;
@@ -58,16 +58,15 @@ nav {
     align-items: center;
 }
 
-
-#projects_technologies_icons img {
-    height: 100px;
+#languages_icons img,
+#substance_style_icons img {
     margin: 15px;
+    height: 100px;
+    width: auto;
     /*widows: auto;*/
 }
-#languages_icons img,
-#substance_style_icons img, 
-#social_media_icons img{
-    height: 100px;
+
+#social_media_icons img {
     margin: 15px;
     height: 80px;
     width: auto;
@@ -88,13 +87,15 @@ nav {
 
 #about_text,
 #projects_text {
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #projects_quote {
     margin: 100px 200px 100px 200px;
     text-align: center;
 }
+
 #tools_quote {
     margin: 100px 200px 100px 200px;
     /*margin-right: 200px;*/
@@ -102,4 +103,3 @@ nav {
     /*margin-top: 30px;*/
     /*margin-bottom: 30px;*/
 }
-
