@@ -6,6 +6,8 @@ body {
 
 .container-fluid {
     margin-top: 20px;
+    position: relative;
+    width: 100%;
 }
 
 h1 {
@@ -48,16 +50,24 @@ nav {
     text-align: center;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
-
-#social_media_icons,
-#projects_technologies_icons {
+#projects_technologies_icons,
+#social_media_icons {
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     align-items: center;
 }
 
-#social_media_icons img {
+
+#projects_technologies_icons img {
+    height: 100px;
+    margin: 15px;
+    /*widows: auto;*/
+}
+#languages_icons img,
+#substance_style_icons img, 
+#social_media_icons img{
+    height: 100px;
     margin: 15px;
     height: 80px;
     width: auto;
@@ -82,14 +92,14 @@ nav {
 }
 
 #projects_quote {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 100px 200px 100px 200px;
     text-align: center;
 }
-
-#projects_technologies_icons img {
-    height: 100px;
-    margin: 15px;
-    widows: auto;
+#tools_quote {
+    margin: 100px 200px 100px 200px;
+    /*margin-right: 200px;*/
+    text-align: center;
+    /*margin-top: 30px;*/
+    /*margin-bottom: 30px;*/
 }
 

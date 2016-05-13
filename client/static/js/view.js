@@ -36,6 +36,12 @@ var name = "<h1 id='name' class='hidden'>Brent Ellis</h1>";
 
 var role = "<h4 class='hidden'>>Software Developer</h4>";
 
+var tools_quote = "<h5>Do not wait; the time will never be 'just right.' Start where you stand, and work with whatever tools you may have at your command, and better tools will be found as you go along. <i>-George Herbert</i></h5>";
+
+var languages = "<h3>Languages</h3>";
+
+var substance_style = "<h3>Substance and Style</h3>";
+
 var projects_quote = "<h5>Choose a job you love, and you will never have to work a day in your life. -Confucius</h5>";
 
 var random_text = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Curabitur sodales ligula in libero. </p>";
@@ -78,7 +84,7 @@ var layout = function () {
                         m("ul", { class: "navbar-pills nav-justified" },
 
                             links.map(function (link) {
-                                return m("li", { class: "active", role: "presentation", id: link.id},
+                                return m("li", { class: "active", role: "presentation", id: link.id },
                                     m("a", { href: link.url }, link.title));
                             }))
                     )
@@ -96,10 +102,17 @@ var layout = function () {
         //Projects Section
         m("#projects", { class: "container-fluid" }, [
             m("#projects_image", { id: "projects_image" }, m.trust(image("tools_image"))),
-            m("#projects_technologies_icons", { style: "display:flex" }, [
-                m.trust(icon("python")),
-                m.trust(icon("swift")),
-                m.trust(icon("javascript")),
+            m("#tools_quote", m.trust(tools_quote)),
+            m("#tools_sections", { style: "display: block" }, [
+                m("#languages", m.trust(languages)),
+                m("#languages_icons", { style: "display:flex" }, [
+                    m.trust(icon("python")),
+                    m.trust(icon("swift")),
+                    m.trust(icon("javascript")),
+                ]),
+            ]),
+            m("#substance_style", m.trust(substance_style)),
+            m("#substance_style_icons", { style: "display:flex" }, [
                 m.trust(icon("html")),
                 m.trust(icon("css3")),
                 m.trust(icon("jquery")),
@@ -110,9 +123,7 @@ var layout = function () {
             ]),
             m("#projects_quote", m.trust(projects_quote)),
             m("#projects_text", m.trust(random_text)),
-
         ]),
-
         //Contacts Section
         m("#contact", { class: "container-fluid" }, [
             m("#social_media_icons", { style: "display:flex" }, [
@@ -164,19 +175,12 @@ function magic_off(image) {
     }, [750]
     );
 }
-function image_flip_off(image) {
+function animated_complete(image, animated) {
     image = $(image);
     setTimeout(function () {
-        image.removeClass("animated flip");
+        image.removeClass(animated);
     }, [750]);
 }
-function image_tada_off(image) {
-    image = $(image);
-    setTimeout(function () {
-        image.removeClass("animated tada");
-    }, [750]);
-}
-
 
 //Loads Once Virtual DOM has been rendered
 $(document).ready(function () {
@@ -189,7 +193,7 @@ $(document).ready(function () {
             $("#nav_bar").removeClass("navbar-fixed-top");
         }
     });
-    
+
     //Fades Body In
     $("body.hidden").fadeIn(3000).removeClass("hidden");
     $('body').scrollspy({ target: ".navbar", offset: 50 });
@@ -208,13 +212,18 @@ $(document).ready(function () {
     $("#social_media_icons").children("a").hover(function () {
         $(this).addClass("animated flip");
     }, function () {
-        image_flip_off(this);
+        animated_complete(this, "animated flip");
     });
 
     //Tada Animation Added To All Icons in Div
-    $("#projects_technologies_icons").children("img").hover(function () {
+    $("#languages_icons").children("img").hover(function () {
         $(this).addClass("animated tada");
     }, function () {
-        image_tada_off(this);
+        animated_complete(this, "animated tada");
+    });
+    $("#substance_style_icons").children("img").hover(function () {
+        $(this).addClass("animated tada");
+    }, function () {
+        animated_complete(this, "animated tada");
     });
 });
