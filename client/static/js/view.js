@@ -68,17 +68,17 @@ var layout = function () {
                 m("#role", m.trust(role)),
             ]),
             //Nav Bar
-            m("nav", { class: "navbar navbar-default navbar-static-top", role: "navigation" },
+            m("nav", { class: "navbar navbar-default ", role: "navigation", id: "nav_bar" },
                 m(".container-fluid",
                     m("button", { type: "button", class: "navbar-toggle pull-left" },
                         m("span", { class: "icon-bar" }),
                         m("span", { class: "icon-bar" }),
                         m("span", { class: "icon-bar" })),
                     m("#myNavbar", { class: "collapse navbar-collapse", },
-                        m("ul", { class: "nav navbar-pills nav-justified" },
-                          
+                        m("ul", { class: "navbar-pills nav-justified" },
+
                             links.map(function (link) {
-                                return m("li", { class: "active", id: link.id },
+                                return m("li", { class: "active", role: "presentation", id: link.id},
                                     m("a", { href: link.url }, link.title));
                             }))
                     )
@@ -180,6 +180,17 @@ function image_tada_off(image) {
 
 //Loads Once Virtual DOM has been rendered
 $(document).ready(function () {
+    //
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > ($("#header_image_image").height())) {
+            $("#nav_bar").addClass("navbar-fixed-top");
+        }
+        if ($(window).scrollTop() < ($("#header_image_image").height())) {
+            $("#nav_bar").removeClass("navbar-fixed-top");
+        }
+    });
+    
+    //Fades Body In
     $("body.hidden").fadeIn(3000).removeClass("hidden");
     $('body').scrollspy({ target: ".navbar", offset: 50 });
 
