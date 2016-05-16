@@ -34,17 +34,17 @@ var view_role = function () {
 
 var name = "<h1 id='name' class='hidden'>Brent Ellis</h1>";
 
-var role = "<h4 class='hidden'>>Software Developer</h4>";
+var role = "<h2 class='hidden'>>Software Developer</h2>";
 
-var tools_quote = "<h5>Do not wait; the time will never be 'just right.' Start where you stand, and work with whatever tools you may have at your command, and better tools will be found as you go along. <i>-George Herbert</i></h5>";
+var tools_quote = "<h4>Do not wait; the time will never be 'just right.' Start where you stand, and work with whatever tools you may have at your command, and better tools will be found as you go along. <br><i>-George Herbert</i></h4>";
 
 var languages = "<h3>Languages</h3>";
 
 var substance_style = "<h3>Substance and Style</h3>";
 
-var projects_quote = "<h5>Choose a job you love, and you will never have to work a day in your life. -Confucius</h5>";
+var projects_quote = "<h4>Choose a job you love, and you will never have to work a day in your life. -Confucius</h4>";
 
-var random_text = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Curabitur sodales ligula in libero. </p>";
+var random_text = "<p>Bacon ipsum dolor amet kevin tenderloin bacon short loin swine, pastrami landjaeger. Short loin sirloin rump leberkas, prosciutto cow alcatra ribeye tongue ground round pastrami. Ground round pork loin pastrami tongue cupim shank meatloaf, bresaola pork chop chuck tenderloin frankfurter beef tri-tip. Filet mignon meatloaf turducken bresaola pork chop, ham beef ribs corned beef. Tongue swine bresaola brisket doner tail. Corned beef pancetta strip steak drumstick sirloin pork ham pastrami. </p><br><p>Spare ribs corned beef flank hamburger. Sausage swine ham fatback. Boudin cupim brisket chuck flank. Shank drumstick shoulder pork loin, ball tip ham hock flank t-bone chuck pork belly corned beef salami. Picanha bresaola fatback meatloaf cupim meatball. Andouille beef cow, flank salami sirloin pork belly turducken jerky alcatra shoulder prosciutto. </p>";
 
 //Helper Functions
 //Icon Picker Helper Function
@@ -157,7 +157,7 @@ $(function () {
     $("body").attr("data-target", ".navbar");
     $("body").attr("data-offset", "50");
     $("h1").wrapInner("<span>");
-    $("h4").wrapInner("<span>");
+    $("h2").wrapInner("<span>");
     $("nav").addClass("hidden");
     $("button").attr('data-toggle', "collapse");
     $("button").attr('data-target', "#myNavbar");
@@ -188,7 +188,7 @@ function animated_complete(image, animated) {
 $(document).ready(function () {
     //
     $(window).scroll(function () {
-        if ($(window).scrollTop() > ($("#header_image_image").height())) {
+        if ($(window).scrollTop() > ($("#header_image_image").height())+15) {
             $("#nav_bar").addClass("navbar-fixed-top");
         }
         if ($(window).scrollTop() < ($("#header_image_image").height())) {
@@ -204,7 +204,7 @@ $(document).ready(function () {
     //Fades For App Loading
 
     $('h1.hidden').fadeIn(4000).removeClass('hidden');
-    $('h4.hidden').fadeIn(5000).removeClass('hidden');
+    $('h2.hidden').fadeIn(5000).removeClass('hidden');
     $('nav.hidden').fadeIn(6000).removeClass('hidden');
 
 

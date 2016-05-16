@@ -26,7 +26,7 @@ h1 span {
     padding: 10px;
 }
 
-h4 {
+h2 {
     color: whitesmoke;
     position: absolute;
     top: 175px;
@@ -34,7 +34,7 @@ h4 {
     width: 100%;
 }
 
-h4 span {
+h2 span {
     color: whitesmoke;
     letter-spacing: 2px;
     background: rgb(0, 0, 0);
@@ -52,10 +52,13 @@ nav {
 }
 
 #social_media_icons {
+    margin-top: 100px;
+    margin-bottom: 100px;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     align-items: center;
+    
 }
 
 #languages_icons img,
@@ -97,9 +100,26 @@ nav {
 }
 
 #tools_quote {
-    margin: 100px 200px 100px 200px;
+    margin: 100px 225px 100px 225px;
     /*margin-right: 200px;*/
     text-align: center;
     /*margin-top: 30px;*/
     /*margin-bottom: 30px;*/
+}
+
+#languages,
+#substance_style {
+    text-align: center;
+}
+
+#languages_icons,
+#substance_style_icons {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects_text{
+    margin: 100px 150px 100px 150px;
 }
