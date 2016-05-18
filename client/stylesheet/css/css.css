@@ -1,118 +1,119 @@
 body {
-    margin: 0px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    margin-bottom: 20px;
     position: relative;
 }
 
+
+/*Container & Body*/
+/*Section Wide Design*/
 .container-fluid {
-    margin-top: 20px;
     position: relative;
     width: 100%;
+    /*box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);*/
+}
+#container {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-h1 {
+/*#about_image,
+#projects_image,
+#tools_image,
+#foot_image {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}*/
+
+/**/
+/*
+Header Section
+*/
+/**/
+
+/*#header {
+    
+}*/
+
+#header_name h1 {
     color: whitesmoke;
     position: absolute;
     top: 100px;
+    left: 100px;
     width: 100%;
 }
-
-h1 span {
+#header_name h1 span {
     color: whitesmoke;
-    letter-spacing: 3px;
+    letter-spacing: 7.5px;
     background: rgb(0, 0, 0);
     /* fallback color */
     background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
+    padding: 15px;
 }
-
-h2 {
+#header_role h2 {
     color: whitesmoke;
     position: absolute;
-    top: 175px;
-    left: 100px;
+    top: 200px;
+    left: 200px;
     width: 100%;
 }
 
-h2 span {
+#header_role h2 span {
     color: whitesmoke;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.7);
     padding: 10px;
     top: 175px;
     left: 100px;
 }
-
 nav {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 25px;
-    padding: 5px;
     text-align: center;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 38px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
 }
 
-#social_media_icons {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    align-items: center;
-    
+#nav_bar li {
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
-#languages_icons img,
-#substance_style_icons img {
-    margin: 15px;
-    height: 100px;
-    width: auto;
-    /*widows: auto;*/
-}
 
-#social_media_icons img {
-    margin: 15px;
-    height: 80px;
-    width: auto;
-}
-
-#about,
-#projects,
-#contact,
-#footer {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-#background_image,
-#projects_image {
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-#about_text,
-#projects_text,
-#contact_text {
-    margin: 100px 225px 100px 225px;
-    text-align: center;
-}
-
+/**/
+/*
+    About Section
+*/
+/**/
 #about_quote {
     margin: 100px 200px 100px 200px;
     text-align: center;
 }
-
-#tools_quote {
-    margin: 100px 200px 100px 200px;
-    /*margin-right: 200px;*/
+#about_text {
+    margin: 100px 225px 100px 225px;
     text-align: center;
-    /*margin-top: 30px;*/
-    /*margin-bottom: 30px;*/
 }
 
+
+
+
+/**/
+/*
+    Projects Section
+*/
+/**/
+#tools_quote {
+    padding: 100px 100px 100px 100px;
+    text-align: center;
+}
 #languages,
 #substance_style {
+    
     text-align: center;
 }
-
 #languages_icons,
 #substance_style_icons {
     margin-left: auto;
@@ -120,11 +121,52 @@ nav {
     justify-content: center;
     align-items: center;
 }
-
-#projects_text{
-    margin: 100px 150px 100px 150px;
+#languages_icons img,
+#substance_style_icons img {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    height: 100px;
+    width: auto;
+    /*widows: auto;*/
 }
 
+#projects_text {
+    margin: 100px 225px 100px 225px;
+    text-align: center;
+}
+
+/**/
+/*
+    Contact Section
+*/
+/**/
+#social_media_icons {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#social_media_icons img {
+    margin: 15px;
+    height: 80px;
+    width: auto;
+}
+#contact_text {
+    margin: 100px 225px 100px 225px;
+    text-align: center;
+}
+
+/**/
+/*
+    Footer Section
+*/
+/**/
 #foot_image {
     height: 100px;
     background-image: url("../images/wood_foot_image.jpeg");
@@ -132,9 +174,9 @@ nav {
     background-size: cover;
 }
 
-h6 {
+#footer h6 {
     position: relative;
-    top:50%;
+    top: 50%;
     transform: translateY(-50%);
     padding-left: 25px;
     color: white;

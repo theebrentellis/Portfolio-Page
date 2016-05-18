@@ -46,9 +46,11 @@ var job_quote = "<h4>Choose a job you love, and you will never have to work a da
 
 var copyright = "<h6>&copy; 2016 Brent Ellis</h6>";
 
-var about_text = "<h2>About Me</h2><br><h3>Who is this guy and why should I continue looking at this webpage? </h3>";
+var about_text = "<h2>About Me!?!?</h2><br><h3>Who is this guy and why should I continue looking at this webpage?</h3><br><p>(Also, what's the deal with the cliche quote?)</p><h4>Hello World! My name is Brent Ellis and I'm a Full Stack Web Developer with a passion for creating new websites and applications. I realize the quote might be a vapid expresssion for some but I've never had a job that engaged me so much that working doesn't feel like working. Where hours seem to fly by and when you learn about a new technology and all you can think about is what you can build with it. </h4><br><h4>When I'm not working on projects I like to play golf and soccer. I also like to explore The Internet of Things. </h4>";
 
-var contact_text = "<h3>What to know a little bite more </h3>";
+var projects_text = "<h4>Check out some of the projects that I've been working on!</h4>";
+
+var contact_text = "<h3>Like what you see so far? Interetsted in hiring me? Feel free to contact me </h3>";
 
 var random_text = "<p>Bacon ipsum dolor amet kevin tenderloin bacon short loin swine, pastrami landjaeger. Short loin sirloin rump leberkas, prosciutto cow alcatra ribeye tongue ground round pastrami. Ground round pork loin pastrami tongue cupim shank meatloaf, bresaola pork chop chuck tenderloin frankfurter beef tri-tip. Filet mignon meatloaf turducken bresaola pork chop, ham beef ribs corned beef. Tongue swine bresaola brisket doner tail. Corned beef pancetta strip steak drumstick sirloin pork ham pastrami. </p><br><p>Spare ribs corned beef flank hamburger. Sausage swine ham fatback. Boudin cupim brisket chuck flank. Shank drumstick shoulder pork loin, ball tip ham hock flank t-bone chuck pork belly corned beef salami. Picanha bresaola fatback meatloaf cupim meatball. Andouille beef cow, flank salami sirloin pork belly turducken jerky alcatra shoulder prosciutto. </p>";
 
@@ -68,19 +70,23 @@ function image(name) {
 
 //Mithril View For App
 var layout = function () {
-    return m(".container-fluid", [
-        //Header & Navigation Bar
+    //Returns Container
+    return m("#container", { class: "container-fluid" }, [
 
-        //Header Section with Background Image
-        //Name
-        //Role
-        m(".header", [
-            m(".image", m.trust(image("header_image")), [
+        // 
+        //Header Section
+        // 
+        m("#header", { class: "container-fluid" }, [
+            //Header Image
+            m("#header_image", m.trust(image("header")), [
+                //Displays Name
                 m("#header_name", m.trust(name)),
-                m("#role", m.trust(role)),
+                //Role
+                m("#header_role", m.trust(role)),
             ]),
-            //Nav Bar
-            m("nav", { class: "navbar navbar-default ", role: "navigation", id: "nav_bar" },
+
+            //Navigation Bar
+            m("nav", { id: "nav_bar", class: "navbar navbar-default ", role: "navigation" }, [
                 m(".container-fluid",
                     m("button", { type: "button", class: "navbar-toggle pull-left" },
                         m("span", { class: "icon-bar" }),
@@ -95,20 +101,23 @@ var layout = function () {
                             }))
                     )
                 )
-            ),
+            ]),
         ]),
         //Main Sections of Page
-
+        // 
         //About Section
+        // 
         m("#about", { class: "container-fluid" }, [
-            m("#background_image", m.trust(image("about_image"))),
+            m("#about_image", m.trust(image("about"))),
             m("#about_quote", m.trust(job_quote)),
-            m("#about_text", m.trust(random_text)),
+            m("#about_text", m.trust(about_text)),
         ]),
 
+        // 
         //Projects Section
+        // 
         m("#projects", { class: "container-fluid" }, [
-            m("#projects_image", { id: "projects_image" }, m.trust(image("tools_image"))),
+            m("#projects_image", { id: "projects_image" }, m.trust(image("tools"))),
             m("#tools_quote", m.trust(tools_quote)),
             m("#tools_sections", { style: "display: block" }, [
                 m("#languages", m.trust(languages), [
@@ -132,7 +141,9 @@ var layout = function () {
             ]),
             m("#projects_text", m.trust(random_text)),
         ]),
+        // 
         //Contacts Section
+        // 
         m("#contact", { class: "container-fluid" }, [
             m("#social_media_icons", { style: "display:flex" }, [
                 m.trust(icon("linkedin")),
@@ -144,7 +155,9 @@ var layout = function () {
             m("#contact_text", m.trust(random_text)),
         ]),
 
+        // 
         //Footer Section
+        // 
         m("#footer", [
             m("#foot_image", m.trust(copyright)),
         ]),
@@ -157,19 +170,19 @@ m.module(document.body, { controller: function () { }, view: layout });
 
 //Jquery Adding Attributes
 $(function () {
-    $("body").addClass("hidden");
-    $("body").attr("data-spy", "scroll");
-    $("body").attr("data-target", ".navbar");
-    $("body").attr("data-offset", "50");
+    $("#container").addClass("hidden");
+    $("#container").attr("data-spy", "scroll");
+    $("#container").attr("data-target", ".navbar");
+    $("#container").attr("data-offset", "50");
     $("h1").wrapInner("<span>");
     $("h2").wrapInner("<span>");
-    $("nav").addClass("hidden");
+    // $("nav").addClass("hidden");
     $("button").attr('data-toggle', "collapse");
     $("button").attr('data-target', "#myNavbar");
-    $("#linkedin_icon").wrap($('<a>', { href: "http://www.linkedin.com/in/theebrentellis" }));
-    $("#github_icon").wrap($('<a>', { href: "http://www.github.com/theebrentellis" }));
-    $("#facebook_icon").wrap($('<a>', { href: "http://www.facebook.com/brent.ellis.3382" }));
-    $("#twitter_icon").wrap($('<a>', { href: "http://www.twitter.com/TheeBrentEllis?lang=en" }));
+    $("#linkedin_icon").wrap($('<a>', { href: "http://www.linkedin.com/in/theebrentellis", target: "_blank" }));
+    $("#github_icon").wrap($('<a>', { href: "http://www.github.com/theebrentellis", target: "_blank" }));
+    $("#facebook_icon").wrap($('<a>', { href: "http://www.facebook.com/brent.ellis.3382", target: "_blank" }));
+    $("#twitter_icon").wrap($('<a>', { href: "http://www.twitter.com/TheeBrentEllis?lang=en", target: "_blank" }));
     $("#email_icon").wrap($('<a>', { href: "mailto:brent.ellis@live.com" }));
 });
 
@@ -191,25 +204,25 @@ function animated_complete(image, animated) {
 
 //Loads Once Virtual DOM has been rendered
 $(document).ready(function () {
-    //
+    
     $(window).scroll(function () {
-        if ($(window).scrollTop() > ($("#header_image_image").height()) + 15) {
+        if ($(window).scrollTop() > ($("#header_image").height())) {
             $("#nav_bar").addClass("navbar-fixed-top");
         }
-        if ($(window).scrollTop() < ($("#header_image_image").height())) {
+        if ($(window).scrollTop() < ($("#header_image").height())) {
             $("#nav_bar").removeClass("navbar-fixed-top");
         }
     });
 
     //Fades Body In
-    $("body.hidden").fadeIn(3000).removeClass("hidden");
-    $('body').scrollspy({ target: ".navbar", offset: 50 });
+    $("#container.hidden").fadeIn(3000).removeClass("hidden");
+    $('#container').scrollspy({ target: ".navbar", offset: 50 });
 
 
     //Fades For App Loading
     $('h1.hidden').fadeIn(4000).removeClass('hidden');
     $('h2.hidden').fadeIn(5000).removeClass('hidden');
-    $('nav.hidden').fadeIn(6000).removeClass('hidden');
+    // $('nav.hidden').fadeIn(6000).removeClass('hidden');
 
 
     //Hover Events For Contact Images
@@ -231,8 +244,4 @@ $(document).ready(function () {
     }, function () {
         animated_complete(this, "animated tada");
     });
-    
-    
-    
-    // $("#footer_image_image").removeClass("img-responsive");
 });
