@@ -46,17 +46,18 @@ var job_quote = "<h5 id='job_quote'>Choose a job you love, and you will never ha
 
 
 
-var about_text = "<h2>About Me!?!?</h2><br><h4>Who is this guy and why should I continue looking at this webpage?</h4><span><p>(Also, what's the deal with the cliche quote?)</p></span><br><h5>Hello World! My name is Brent Ellis and I'm a Full Stack Web Developer with a passion for creating professional high quality websites and applications. I realize the quote might be a vapid express ion for some but I've never had a job that engaged me so much that working doesn't feel like working. Where hours seem to fly by and when you learn about a new technology and all you can think about is what you can build with it. With technology expanding at such a rapid pace the sky is the limit on what we can build together. </h5><br><h5>When I'm not working on projects I like to golf and play soccer. I also like to explore new technologies and day dream about the endless possibilites they can provide. </h5>";
+var about_text = "<h2>About Me!?!?</h2><br><h4>Who is this guy and why should I continue looking at this webpage?</h4><span><p>(Also, what's the deal with the cliche quote?)</p></span><br><h5>Hello World! My name is Brent Ellis and I'm a Full Stack Web Developer with a passion for creating professional high quality websites and applications. I realize the quote might be a vapid expression for some but I've never had a job that engaged me so much that working doesn't feel like working. Where hours seem to fly by and when you learn about a new technology and all you can think about is what you can build with it. With technology expanding at such a rapid pace the sky is the limit on what we can build together. </h5><br><h5>When I'm not working on projects I like to golf and play soccer. I also like to explore new technologies and day dream about the endless possibilites they can provide. </h5>";
 
 var projects_text = "<h4>Check out some of the projects that I've been working on!</h4>";
 
 var contact_text = "<h3>Like what you see so far? Interetsted in hiring me? Feel free to contact me </h3>";
 
-var contact_text_top ="<h3>Like What You've Seen So Far?<br><span>I'm Currently Seeking New Opportunities.</span><br><span>Check out my social media profiles or send me an email.</span><br></h3>";
+var contact_text_top = "<h3>Like What You've Seen So Far?<br><span>I'm Currently Seeking New Opportunities.</span><br><span>Check out my social media profiles or send me an email.</span><br></h3>";
 
-var contact_text_bottom="<h3><span>What Can I Build For You?!</span></h3>";
+var contact_text_bottom = "<h3><span>What Can I Build For You?!</span></h3>";
 
 var copyright = "<p>&copy; 2016 Brent Ellis</p>";
+
 
 var random_text = "<p>Bacon ipsum dolor amet kevin tenderloin bacon short loin swine, pastrami landjaeger. Short loin sirloin rump leberkas, prosciutto cow alcatra ribeye tongue ground round pastrami. Ground round pork loin pastrami tongue cupim shank meatloaf, bresaola pork chop chuck tenderloin frankfurter beef tri-tip. Filet mignon meatloaf turducken bresaola pork chop, ham beef ribs corned beef. Tongue swine bresaola brisket doner tail. Corned beef pancetta strip steak drumstick sirloin pork ham pastrami. </p><br><p>Spare ribs corned beef flank hamburger. Sausage swine ham fatback. Boudin cupim brisket chuck flank. Shank drumstick shoulder pork loin, ball tip ham hock flank t-bone chuck pork belly corned beef salami. Picanha bresaola fatback meatloaf cupim meatball. Andouille beef cow, flank salami sirloin pork belly turducken jerky alcatra shoulder prosciutto. </p>";
 
@@ -82,9 +83,9 @@ var layout = function () {
         // 
         //Header Section
         // 
-        m("#header", {class: "page-header"}, [
+        m("#header", { class: "page-header" }, [
             //Header Image
-            m("#header_image", m.trust(image("header")),[
+            m("#header_image", m.trust(image("header")), [
                 //Displays Name
                 m("#header_name", m.trust(name)),
                 //Role
@@ -99,8 +100,7 @@ var layout = function () {
                         m("span", { class: "icon-bar" }),
                         m("span", { class: "icon-bar" })),
                     m("#myNavbar", { class: "collapse navbar-collapse", },
-                        m("ul", { class: "navbar-pills nav-justified" },
-
+                        m("ul", { class: "nav navbar-pills nav-justified" },
                             links.map(function (link) {
                                 return m("li", { class: "active", role: "presentation", id: link.id },
                                     m("a", { href: link.url }, link.title));
@@ -140,14 +140,16 @@ var layout = function () {
                         m.trust(icon("jquery")),
                         m.trust(icon("bootstrap")),
                         m.trust(icon("mongodb")),
+                        m.trust(icon("expressjs")),
                         m.trust(icon("angular")),
                         m.trust(icon("node")),
+                        m.trust(icon("mithril")),
                     ]),
                 ]),
             ]),
             m("#projects_text", m.trust(projects_text)),
-            m("#projects_thumbnails",[
-                m(".row",[
+            m("#projects_thumbnails", [
+                m(".row", [
                     m(".col-md-3")
                 ]),
             ]),
@@ -220,9 +222,10 @@ $(document).ready(function () {
     //Snaps Navigation Bar To Top On Scroll
     $(window).scroll(function () {
         if ($(window).scrollTop() > ($("#about_image").height())) {
-            $("#nav_bar").slideDown("fast", function(){
-            $("#nav_bar").addClass("navbar-fixed-top width container");
-        })}
+            $("#nav_bar").slideDown("fast", function () {
+                $("#nav_bar").addClass("navbar-fixed-top width container");
+            })
+        }
         if ($(window).scrollTop() < ($("#about_image").height())) {
             $("#nav_bar").removeClass("navbar-fixed-top width container");
         }
