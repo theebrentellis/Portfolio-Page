@@ -1,7 +1,7 @@
 body {
     margin-top: 20px;
     margin-bottom: 20px;
-    position: relative;
+    /*position: relative;*/
 }
 
 
@@ -10,29 +10,34 @@ body {
 .container-fluid {
     position: relative;
     width: 100%;
+    max-width: 1600px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
     /*box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);*/
 }
-#container {
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
 
-/*#about_image,
-#projects_image,
-#tools_image,
-#foot_image {
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}*/
+#header,
+#about,
+#projects,
+#contact,
+#footer {
+    background-color: white;
+}
+hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
 
 /**/
 /*
 Header Section
 */
 /**/
-
-/*#header {
-    
-}*/
-
 #header_name h1 {
     color: whitesmoke;
     position: absolute;
@@ -62,8 +67,8 @@ Header Section
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.7);
     padding: 10px;
-    top: 175px;
-    left: 100px;
+    /*top: 175px;
+    left: 100px;*/
 }
 nav {
     position: relative;
@@ -89,14 +94,24 @@ nav {
 */
 /**/
 #about_quote {
-    margin: 100px 200px 100px 200px;
+    margin: 50px 100px 50px 100px;
     text-align: center;
 }
-#about_text {
-    margin: 100px 225px 100px 225px;
-    text-align: center;
+#job_quote {
+    margin-bottom: 50px;
 }
 
+#about_text {
+    margin: 50px 225px 100px 225px;
+    text-align: center;
+}
+#about_text h2 {
+    font-size: 40px;
+}
+#about_text h5 {
+    line-height: 175%;
+    font-size: 20px;
+}
 
 
 
@@ -106,8 +121,13 @@ nav {
 */
 /**/
 #tools_quote {
-    padding: 100px 100px 100px 100px;
+    margin: 50px 100px 50px 100px;
     text-align: center;
+}
+#tools_quote_text{
+    margin-bottom: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 #languages,
 #substance_style {
@@ -161,7 +181,9 @@ nav {
     margin: 100px 225px 100px 225px;
     text-align: center;
 }
-
+#contact_text h3{
+    line-height: 200%;
+}
 /**/
 /*
     Footer Section
@@ -174,7 +196,7 @@ nav {
     background-size: cover;
 }
 
-#footer h6 {
+#footer p {
     position: relative;
     top: 50%;
     transform: translateY(-50%);

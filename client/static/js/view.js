@@ -36,21 +36,27 @@ var name = "<h1 id='name' class='hidden'>Brent Ellis</h1>";
 
 var role = "<h2 class='hidden'>>Software Developer</h2>";
 
-var tools_quote = "<h4>Do not wait; the time will never be 'just right.' Start where you stand, and work with whatever tools you may have at your command, and better tools will be found as you go along. <br><i>-George Herbert</i></h4>";
+var tools_quote = "<h5 id='tools_quote_text'>Do not wait; the time will never be 'just right.' Start where you stand, and work with whatever tools you may have at your command, and better tools will be found as you go along. <br><i>-George Herbert</i></h5><span><hr/></span>";
 
 var languages = "<h3>Languages</h3>";
 
 var substance_style = "<h3>Substance and Style</h3>";
 
-var job_quote = "<h4>Choose a job you love, and you will never have to work a day in your life. <br><i>-Confucius</i></h4>";
+var job_quote = "<h5 id='job_quote'>Choose a job you love, and you will never have to work a day in your life. <br><i>-Confucius</i></h5><span><hr/></span>";
 
-var copyright = "<h6>&copy; 2016 Brent Ellis</h6>";
 
-var about_text = "<h2>About Me!?!?</h2><br><h3>Who is this guy and why should I continue looking at this webpage?</h3><br><p>(Also, what's the deal with the cliche quote?)</p><h4>Hello World! My name is Brent Ellis and I'm a Full Stack Web Developer with a passion for creating new websites and applications. I realize the quote might be a vapid expresssion for some but I've never had a job that engaged me so much that working doesn't feel like working. Where hours seem to fly by and when you learn about a new technology and all you can think about is what you can build with it. </h4><br><h4>When I'm not working on projects I like to play golf and soccer. I also like to explore The Internet of Things. </h4>";
+
+var about_text = "<h2>About Me!?!?</h2><br><h4>Who is this guy and why should I continue looking at this webpage?</h4><span><p>(Also, what's the deal with the cliche quote?)</p></span><br><h5>Hello World! My name is Brent Ellis and I'm a Full Stack Web Developer with a passion for creating professional high quality websites and applications. I realize the quote might be a vapid express ion for some but I've never had a job that engaged me so much that working doesn't feel like working. Where hours seem to fly by and when you learn about a new technology and all you can think about is what you can build with it. With technology expanding at such a rapid pace the sky is the limit on what we can build together. </h5><br><h5>When I'm not working on projects I like to golf and play soccer. I also like to explore new technologies and day dream about the endless possibilites they can provide. </h5>";
 
 var projects_text = "<h4>Check out some of the projects that I've been working on!</h4>";
 
 var contact_text = "<h3>Like what you see so far? Interetsted in hiring me? Feel free to contact me </h3>";
+
+var contact_text_top ="<h3>Like What You've Seen So Far?<br><span>I'm Currently Seeking New Opportunities.</span><br><span>Check out my social media profiles or send me an email.</span><br></h3>";
+
+var contact_text_bottom="<h3><span>What Can I Build For You?!</span></h3>";
+
+var copyright = "<p>&copy; 2016 Brent Ellis</p>";
 
 var random_text = "<p>Bacon ipsum dolor amet kevin tenderloin bacon short loin swine, pastrami landjaeger. Short loin sirloin rump leberkas, prosciutto cow alcatra ribeye tongue ground round pastrami. Ground round pork loin pastrami tongue cupim shank meatloaf, bresaola pork chop chuck tenderloin frankfurter beef tri-tip. Filet mignon meatloaf turducken bresaola pork chop, ham beef ribs corned beef. Tongue swine bresaola brisket doner tail. Corned beef pancetta strip steak drumstick sirloin pork ham pastrami. </p><br><p>Spare ribs corned beef flank hamburger. Sausage swine ham fatback. Boudin cupim brisket chuck flank. Shank drumstick shoulder pork loin, ball tip ham hock flank t-bone chuck pork belly corned beef salami. Picanha bresaola fatback meatloaf cupim meatball. Andouille beef cow, flank salami sirloin pork belly turducken jerky alcatra shoulder prosciutto. </p>";
 
@@ -76,9 +82,9 @@ var layout = function () {
         // 
         //Header Section
         // 
-        m("#header", { class: "container-fluid" }, [
+        m("#header", {class: "page-header"}, [
             //Header Image
-            m("#header_image", m.trust(image("header")), [
+            m("#header_image", m.trust(image("header")),[
                 //Displays Name
                 m("#header_name", m.trust(name)),
                 //Role
@@ -139,12 +145,19 @@ var layout = function () {
                     ]),
                 ]),
             ]),
-            m("#projects_text", m.trust(random_text)),
+            m("#projects_text", m.trust(projects_text)),
+            m("#projects_thumbnails",[
+                m(".row",[
+                    m(".col-md-3")
+                ]),
+            ]),
         ]),
         // 
         //Contacts Section
         // 
         m("#contact", { class: "container-fluid" }, [
+            // m("#contact_image", m.trust(image("contact"))),
+            m("#contact_text", m.trust(contact_text_top)),
             m("#social_media_icons", { style: "display:flex" }, [
                 m.trust(icon("linkedin")),
                 m.trust(icon("github")),
@@ -152,7 +165,7 @@ var layout = function () {
                 m.trust(icon("twitter")),
                 m.trust(icon("email")),
             ]),
-            m("#contact_text", m.trust(random_text)),
+            m("#contact_text", m.trust(contact_text_bottom)),
         ]),
 
         // 
@@ -170,12 +183,12 @@ m.module(document.body, { controller: function () { }, view: layout });
 
 //Jquery Adding Attributes
 $(function () {
-    $("#container").addClass("hidden");
+    // $("#container").addClass("hidden");
     $("#container").attr("data-spy", "scroll");
     $("#container").attr("data-target", ".navbar");
     $("#container").attr("data-offset", "50");
-    $("h1").wrapInner("<span>");
-    $("h2").wrapInner("<span>");
+    $("#header_name h1").wrapInner("<span>");
+    $("#header_role h2").wrapInner("<span>");
     // $("nav").addClass("hidden");
     $("button").attr('data-toggle', "collapse");
     $("button").attr('data-target', "#myNavbar");
@@ -204,13 +217,14 @@ function animated_complete(image, animated) {
 
 //Loads Once Virtual DOM has been rendered
 $(document).ready(function () {
-    
+    //Snaps Navigation Bar To Top On Scroll
     $(window).scroll(function () {
-        if ($(window).scrollTop() > ($("#header_image").height())) {
-            $("#nav_bar").addClass("navbar-fixed-top");
-        }
-        if ($(window).scrollTop() < ($("#header_image").height())) {
-            $("#nav_bar").removeClass("navbar-fixed-top");
+        if ($(window).scrollTop() > ($("#about_image").height())) {
+            $("#nav_bar").slideDown("fast", function(){
+            $("#nav_bar").addClass("navbar-fixed-top width container");
+        })}
+        if ($(window).scrollTop() < ($("#about_image").height())) {
+            $("#nav_bar").removeClass("navbar-fixed-top width container");
         }
     });
 
