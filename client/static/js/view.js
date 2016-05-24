@@ -125,7 +125,7 @@ var layout = function () {
         m("#projects", { class: "container-fluid" }, [
             m("#projects_image", { id: "projects_image" }, m.trust(image("tools"))),
             m("#tools_quote", m.trust(tools_quote)),
-            m("#tools_sections", { style: "display: block" }, [
+            m("#tools_section", { style: "display: block" }, [
                 m("#languages", m.trust(languages), [
                     m("#languages_icons", { style: "display:flex" }, [
                         m.trust(icon("python")),
@@ -185,20 +185,66 @@ m.module(document.body, { controller: function () { }, view: layout });
 
 //Jquery Adding Attributes
 $(function () {
-    // $("#container").addClass("hidden");
     $("#container").attr("data-spy", "scroll");
     $("#container").attr("data-target", ".navbar");
     $("#container").attr("data-offset", "50");
+
     $("#header_name h1").wrapInner("<span>");
     $("#header_role h2").wrapInner("<span>");
-    // $("nav").addClass("hidden");
+
+    $("#tools_section img").attr("data-toggle", "popover");
+    $("#tools_section img").attr("data-trigger", "hover");
+    $("#tools_section img").attr("data-placement", "bottom");
+
     $("button").attr('data-toggle', "collapse");
     $("button").attr('data-target', "#myNavbar");
+
+    //Individual Icon Identifiers
     $("#linkedin_icon").wrap($('<a>', { href: "http://www.linkedin.com/in/theebrentellis", target: "_blank" }));
     $("#github_icon").wrap($('<a>', { href: "http://www.github.com/theebrentellis", target: "_blank" }));
     $("#facebook_icon").wrap($('<a>', { href: "http://www.facebook.com/brent.ellis.3382", target: "_blank" }));
     $("#twitter_icon").wrap($('<a>', { href: "http://www.twitter.com/TheeBrentEllis?lang=en", target: "_blank" }));
     $("#email_icon").wrap($('<a>', { href: "mailto:brent.ellis@live.com" }));
+
+    $("#").attr("title", "");
+    $("#").attr("data-content", "");
+
+
+    $("#python_icon").attr("title", "Python");
+    $("#python_icon").attr("data-content", "Python is a widely used high-level, general-purpose, interpreted, dynamic programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java.");
+
+    $("#swift_icon").attr("title", "Swift");
+    $("#swift_icon").attr("data-content", "Swift is a general-purpose, multi-paradigm, compiled programming language created for iOS, OS X, watchOS, tvOS and Linux developed by Apple Inc.");
+
+    $("#javascript_icon").attr("title", "Javascript");
+    $("#javascript_icon").attr("data-content", "A high-level, dynamic, untyped, and interpreted programming language. Alongside HTML and CSS, it is one of the three core technologies of World Wide Web content production; the majority of websites employ it and it is supported by all modern Web browsers without plug-ins.");
+
+    $("#html_icon").attr("title", "HTML");
+    $("#html_icon").attr("data-content", "The standard markup language used to create web pages. Along with CSS, and JavaScript, HTML is a cornerstone technology used to create web pages, as well as to create user interfaces for mobile and web applications.");
+
+    $("#css3_icon").attr("title", "CSS");
+    $("#css3_icon").attr("data-content", "Cascading Style Sheets (CSS) is s style sheet language used for describing the presentation of a document written in a markup language. Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.");
+
+    $("#jquery_icon").attr("title", "jQuery");
+    $("#jquery_icon").attr("data-content", "jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. jQuery's syntax is designed to make it easier to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications.");
+    
+    $("#bootstrap_icon").attr("title", "Bootstrap");
+    $("#bootstrap_icon").attr("data-content", "Bootstrap is a front end web framework for creating websites and web applications. It contains HTML- and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions.");
+    
+    $("#mongodb_icon").attr("title", "MongoDB");
+    $("#mongodb_icon").attr("data-content", "A NoSQL database, MongoDB avoids the traditional table-based relational database structure in favor of JSON-like documents with dynamic schemas, making the integration of data in certain types of applications easier and faster.");
+    
+    $("#expressjs_icon").attr("title", "Express.js");
+    $("#expressjs_icon").attr("data-content", "Express.js is a Node.js web application server framework, designed for building single-page, multi-page, and hybrid web applications. It is the de facto standard server framework for Node.js.");
+    
+    $("#angular_icon").attr("title", "AngularJS");
+    $("#angular_icon").attr("data-content", "A web application framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications. AngularJS is the frontend part of the MEAN stack.");
+
+    $("#node_icon").attr("title", "Node.js");
+    $("#node_icon").attr("data-content", "A JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.");
+    
+    $("#mithril_icon").attr("title", "Mithril");
+    $("#mithril_icon").attr("data-content", "Mithril is a client-side MVC framework used to organize code in a way that is easy to think about and to maintain.");
 });
 
 
@@ -261,4 +307,7 @@ $(document).ready(function () {
     }, function () {
         animated_complete(this, "animated tada");
     });
+
+    //Activates JQuery Popover
+    $('[data-toggle="popover"]').popover();
 });
