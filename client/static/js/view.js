@@ -65,7 +65,7 @@ var random_text = "<p>Bacon ipsum dolor amet kevin tenderloin bacon short loin s
 //Icon Picker Helper Function
 function icon(name) {
     name = name;
-    icon_string = "<img id='" + name + "_icon' src='stylesheet/images/" + name + ".png'>";
+    icon_string = "<img id='" + name + "_icon' alt='"+name+"' src='stylesheet/images/" + name + ".png'>";
     return icon_string;
 }
 //Image Picker Helper Function
@@ -161,11 +161,11 @@ var layout = function () {
             // m("#contact_image", m.trust(image("contact"))),
             m("#contact_text", m.trust(contact_text_top)),
             m("#social_media_icons", { style: "display:flex" }, [
-                m.trust(icon("linkedin")),
-                m.trust(icon("github")),
-                m.trust(icon("facebook")),
-                m.trust(icon("twitter")),
-                m.trust(icon("email")),
+                m.trust(icon("LinkedIn")),
+                m.trust(icon("Github")),
+                m.trust(icon("Facebook")),
+                m.trust(icon("Twitter")),
+                m.trust(icon("Email")),
             ]),
             m("#contact_text", m.trust(contact_text_bottom)),
         ]),
@@ -200,11 +200,11 @@ $(function () {
     $("button").attr('data-target', "#myNavbar");
 
     //Individual Icon Identifiers
-    $("#linkedin_icon").wrap($('<a>', { href: "http://www.linkedin.com/in/theebrentellis", target: "_blank" }));
-    $("#github_icon").wrap($('<a>', { href: "http://www.github.com/theebrentellis", target: "_blank" }));
-    $("#facebook_icon").wrap($('<a>', { href: "http://www.facebook.com/brent.ellis.3382", target: "_blank" }));
-    $("#twitter_icon").wrap($('<a>', { href: "http://www.twitter.com/TheeBrentEllis?lang=en", target: "_blank" }));
-    $("#email_icon").wrap($('<a>', { href: "mailto:brent.ellis@live.com" }));
+    $("#LinkedIn_icon").wrap($('<a>', { href: "http://www.linkedin.com/in/theebrentellis", target: "_blank"}));
+    $("#Github_icon").wrap($('<a>', { href: "http://www.github.com/theebrentellis", target: "_blank" }));
+    $("#Facebook_icon").wrap($('<a>', { href: "http://www.facebook.com/brent.ellis.3382", target: "_blank" }));
+    $("#Twitter_icon").wrap($('<a>', { href: "http://www.twitter.com/TheeBrentEllis?lang=en",target: "_blank" }));
+    $("#Email_icon").wrap($('<a>', { href: "mailto:brent.ellis@live.com"}));
 
     $("#").attr("title", "");
     $("#").attr("data-content", "");
