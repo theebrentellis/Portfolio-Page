@@ -102,7 +102,7 @@ var layout = function () {
             ]),
         ]),
         m("#header", [
-            m(".header_image", m.trust(image("header")),[
+            m(".header_image", m.trust(image("header")), [
                 //Displays Name
                 m("#header_name", m.trust(name)),
                 //Displays Role
@@ -116,7 +116,7 @@ var layout = function () {
         m("#about", [
             m("#about_quote", m.trust(job_quote)),
             m("#about_image", m.trust(image("about"))),
-            
+
             m("#about_text", m.trust(about_text)),
         ]),
 
@@ -202,11 +202,11 @@ $(function () {
 
 
     //Individual Icon Identifiers
-    $("#LinkedIn_icon").wrap($('<a>', { href: "http://www.linkedin.com/in/theebrentellis", target: "_blank" }));
-    $("#Github_icon").wrap($('<a>', { href: "http://www.github.com/theebrentellis", target: "_blank" }));
-    $("#Facebook_icon").wrap($('<a>', { href: "http://www.facebook.com/brent.ellis.3382", target: "_blank" }));
-    $("#Twitter_icon").wrap($('<a>', { href: "http://www.twitter.com/TheeBrentEllis?lang=en", target: "_blank" }));
-    $("#Email_icon").wrap($('<a>', { href: "mailto:brent.ellis@live.com" }));
+    $("#LinkedIn_icon").wrap($('<a>', { title: "LinkedIn", href: "http://www.linkedin.com/in/theebrentellis", target: "_blank" }));
+    $("#Github_icon").wrap($('<a>', { title: "Github", href: "http://www.github.com/theebrentellis", target: "_blank" }));
+    $("#Facebook_icon").wrap($('<a>', { title: "Facebook", href: "http://www.facebook.com/brent.ellis.3382", target: "_blank" }));
+    $("#Twitter_icon").wrap($('<a>', { title: "Twitter", href: "http://www.twitter.com/TheeBrentEllis?lang=en", target: "_blank" }));
+    $("#Email_icon").wrap($('<a>', { title: "Email", href: "mailto:brent.ellis@live.com" }));
 
     //Popover Text For Project Icons
     $("#python_icon").attr("title", "Python");
@@ -268,7 +268,7 @@ function animated_complete(image, animated) {
 $(document).ready(function () {
     //Fades Body In
     $("#container.hidden").fadeIn(3000).removeClass("hidden");
-    
+
     //Fades For App Loading
     // $('p.hidden').fadeIn(4000).removeClass('hidden');
     $('p.hidden').fadeIn(5000).removeClass('hidden');

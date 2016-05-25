@@ -37,12 +37,12 @@ hr {
     position: absolute;
     top: 100px;
     left: 100px;
-    width: 100%;
+    font-size: 35px;
 }
 
 #header_name p span {
     color: whitesmoke;
-    letter-spacing: 7.5px;
+    letter-spacing: 5px;
     background: rgba(0, 0, 0, 0.7);
     padding: 15px;
 }
@@ -50,16 +50,16 @@ hr {
 #header_role p {
     color: whitesmoke;
     position: absolute;
-    top: 200px;
+    top: 175px;
     left: 200px;
-    width: 100%;
+    font-size: 25px;
 }
 
 #header_role p span {
     color: whitesmoke;
     letter-spacing: 3px;
     background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
+    padding: 15px;
     top: 175px;
     left: 100px;
 }
