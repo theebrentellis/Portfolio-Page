@@ -36,23 +36,23 @@ var name = "<p id='name' class='hidden'>Brent Ellis</p>";
 
 var role = "<p id='role' class='hidden'>>Software Developer</p>";
 
+var job_quote = "<span><hr/></span><h5 id='job_quote'>Choose a job you love, and you will never have to work a day in your life. <br><i>-Confucius</i></h5>";
+
+var about_text = "<h2>About Me!?!?</h2><br><h4>Who is this guy and why should I continue looking at this webpage?</h4><span><p>(Also, what's the deal with the cliche quote?)</p></span><br><h5>Hello World! My name is Brent Ellis and I'm a Full Stack Web Developer with a passion for creating professional high quality websites and applications. I realize the quote might be a vapid expression for some but I've never had a job that engaged me so much that working doesn't feel like working. Where hours seem to fly by and when you learn about a new technology and all you can think about is what you can build with it. With technology expanding at such a rapid pace the sky is the limit on what we can build together. </h5><br><h5>When I'm not working on projects I like to golf and play soccer. I also like to explore new technologies and day dream about the endless possibilites they can provide. </h5>";
+
 var tools_quote = "<h5 id='tools_quote_text'>Do not wait; the time will never be 'just right.' Start where you stand, and work with whatever tools you may have at your command, and better tools will be found as you go along. <br><i>-George Herbert</i></h5><span><hr/></span>";
 
 var languages = "<h3>Languages</h3>";
 
 var substance_style = "<h3>Substance and Style</h3>";
 
-var job_quote = "<h5 id='job_quote'>Choose a job you love, and you will never have to work a day in your life. <br><i>-Confucius</i></h5><span><hr/></span>";
-
-
-
-var about_text = "<h2>About Me!?!?</h2><br><h4>Who is this guy and why should I continue looking at this webpage?</h4><span><p>(Also, what's the deal with the cliche quote?)</p></span><br><h5>Hello World! My name is Brent Ellis and I'm a Full Stack Web Developer with a passion for creating professional high quality websites and applications. I realize the quote might be a vapid expression for some but I've never had a job that engaged me so much that working doesn't feel like working. Where hours seem to fly by and when you learn about a new technology and all you can think about is what you can build with it. With technology expanding at such a rapid pace the sky is the limit on what we can build together. </h5><br><h5>When I'm not working on projects I like to golf and play soccer. I also like to explore new technologies and day dream about the endless possibilites they can provide. </h5>";
-
 var projects_text = "<h4>Check out some of the projects that I've been working on!</h4>";
 
-var contact_text = "<h3>Like what you see so far? Interetsted in hiring me? Feel free to contact me </h3>";
+
 
 var contact_text_top = "<h3>Like What You've Seen So Far?<br><span>I'm Currently Seeking New Opportunities.</span><br><span>Check out my social media profiles or send me an email.</span><br></h3>";
+
+var contact_text = "<h3>Like what you see so far? Interetsted in hiring me? Feel free to contact me </h3>";
 
 var contact_text_bottom = "<h3><span>What Can I Build For You?!</span></h3>";
 
@@ -85,6 +85,7 @@ var layout = function () {
 
         //Navigation Overlay
         m("#navigation_overlay", [
+            // m(".menu-trigger",{id:"toggle"}),
             m(".button_container", { id: "toggle" }, [
                 m("span", { class: "top" }),
                 m("span", { class: "middle" }),
@@ -113,8 +114,9 @@ var layout = function () {
         //About Section
         // 
         m("#about", [
-            m("#about_image", m.trust(image("about"))),
             m("#about_quote", m.trust(job_quote)),
+            m("#about_image", m.trust(image("about"))),
+            
             m("#about_text", m.trust(about_text)),
         ]),
 
@@ -191,7 +193,8 @@ $(function () {
         $('#overlay').toggleClass('open');
     });
 
-    $(".header_text p").wrapInner("<span>");
+    $("#header_name p").wrapInner("<span>");
+    $("#header_role p").wrapInner("<span>");
 
     $("#tools_section img").attr("data-toggle", "popover");
     $("#tools_section img").attr("data-trigger", "hover");
