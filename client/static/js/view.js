@@ -36,25 +36,25 @@ var name = "<p id='name' class='hidden'>Brent Ellis</p>";
 
 var role = "<p id='role' class='hidden'>>Software Developer</p>";
 
-var job_quote = "<span><hr/></span><h5 id='job_quote'>Choose a job you love, and you will never have to work a day in your life. <br><i>-Confucius</i></h5>";
+var job_quote = "<span><hr/></span><p id='job_quote'>Choose a job you love, and you will never have to work a day in your life. <br><i>-Confucius</i></p>";
 
-var about_text = "<h2>About Me!?!?</h2><br><h4>Who is this guy and why should I continue looking at this webpage?</h4><span><p>(Also, what's the deal with the cliche quote?)</p></span><br><h5>Hello World! My name is Brent Ellis and I'm a Full Stack Web Developer with a passion for creating professional high quality websites and applications. I realize the quote might be a vapid expression for some but I've never had a job that engaged me so much that working doesn't feel like working. Where hours seem to fly by and when you learn about a new technology and all you can think about is what you can build with it. With technology expanding at such a rapid pace the sky is the limit on what we can build together. </h5><br><h5>When I'm not working on projects I like to golf and play soccer. I also like to explore new technologies and day dream about the endless possibilites they can provide. </h5>";
+var about_text = "<p id='about_me'>About Me!?!?</p><br><p>Who is this guy and why should I continue looking at this webpage?</p><span><p><small>(Also, what's the deal with the cliche quote?)</small></p></span><br><p>Hello World! My name is Brent Ellis and I'm a Full Stack Web Developer with a passion for creating professional high quality websites and applications. I realize the quote might be a vapid expression for some but I've never had a job that engaged me so much that working doesn't feel like working. Where hours seem to fly by and when you learn about a new technology and all you can think about is what you can build with it. With technology expanding at such a rapid pace the sky is the limit on what we can build together. </p><br><p>When I'm not working on projects I like to golf and play soccer. I also like to explore new technologies and day dream about the endless possibilites they can provide. </p>";
 
-var tools_quote = "<h5 id='tools_quote_text'>Do not wait; the time will never be 'just right.' Start where you stand, and work with whatever tools you may have at your command, and better tools will be found as you go along. <br><i>-George Herbert</i></h5><span><hr/></span>";
+var tools_quote = "<p id='tools_quote_text'>Do not wait; the time will never be 'just right.' Start where you stand, and work with whatever tools you may have at your command, and better tools will be found as you go along. <br><i>-George Herbert</i></p><span><hr/></span>";
 
-var languages = "<h3>Languages</h3>";
+var languages = "<p>Languages</p>";
 
-var substance_style = "<h3>Substance and Style</h3>";
+var substance_style = "<p>Substance and Style</p>";
 
-var projects_text = "<h4>Check out some of the projects that I've been working on!</h4>";
+var projects_text = "<p>Check out some of the projects that I've been working on!</p>";
 
 
 
-var contact_text_top = "<h3>Like What You've Seen So Far?<br><span>I'm Currently Seeking New Opportunities.</span><br><span>Check out my social media profiles or send me an email.</span><br></h3>";
+var contact_text_top = "<p>Like What You've Seen So Far?<br><span>I'm Currently Seeking New Opportunities.</span><br><span>Check out my social media profiles or send me an email.</span><br></p>";
 
-var contact_text = "<h3>Like what you see so far? Interetsted in hiring me? Feel free to contact me </h3>";
+var contact_text = "<p>Like what you see so far? Interetsted in hiring me? Feel free to contact me </p>";
 
-var contact_text_bottom = "<h3><span>What Can I Build For You?!</span></h3>";
+var contact_text_bottom = "<p><span>What Can I Build For You?!</span></p>";
 
 var copyright = "<p>&copy; 2016 Brent Ellis</p>";
 
@@ -77,7 +77,7 @@ function image(name) {
 //Mithril View For App
 var layout = function () {
     //Returns Container
-    return m("#container", { class: "container-fluid" }, [
+    return m("#container", { class: "container" }, [
 
         // 
         //Header Section
@@ -95,7 +95,7 @@ var layout = function () {
                 m("nav", { class: "overlay-menu", id: "nav_overlay" }, [
                     m("ul",
                         links.map(function (link) {
-                            return m("li", { id: link.id },
+                            return m("li", { id: link.id, class:"nav_overlay_li"},
                                 m("a", { href: link.url }, link.title));
                         })),
                 ]),
@@ -116,7 +116,6 @@ var layout = function () {
         m("#about", [
             m("#about_quote", m.trust(job_quote)),
             m("#about_image", m.trust(image("about"))),
-
             m("#about_text", m.trust(about_text)),
         ]),
 
@@ -192,7 +191,14 @@ $(function () {
         $(this).toggleClass('active');
         $('#overlay').toggleClass('open');
     });
-
+    $(".nav_overlay_li").children("a").click(function(){
+        $('#toggle').toggleClass('active');
+        $('#overlay').toggleClass('open');
+    });
+    
+    
+    
+    
     $("#header_name p").wrapInner("<span>");
     $("#header_role p").wrapInner("<span>");
 
