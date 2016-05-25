@@ -94,7 +94,8 @@ hr {
 */
 
 #tools_quote {
-    margin: 50px 100px 50px 100px;
+    margin-top: 50px; 
+    margin-bottom: 50px;
     text-align: center;
 }
 
@@ -147,7 +148,8 @@ hr {
 }
 
 #projects_text {
-    margin: 100px 225px 100px 225px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     text-align: center;
 }
 
@@ -172,11 +174,12 @@ hr {
 }
 
 #contact_text {
-    margin: 100px 225px 100px 225px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     text-align: center;
 }
 
-#contact_text h3 {
+#contact_text p {
     line-height: 200%;
 }
 

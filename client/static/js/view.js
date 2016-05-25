@@ -32,9 +32,9 @@ var view_role = function () {
     // ]);
 };
 
-var name = "<p id='name' class='hidden'>Brent Ellis</p>";
+var name = "<p id='name' class='hidden .col-m-1'>Brent Ellis</p>";
 
-var role = "<p id='role' class='hidden'>>Software Developer</p>";
+var role = "<p id='role' class='hidden .col-m-1'>>Software Developer</p>";
 
 var job_quote = "<span><hr/></span><p id='job_quote'>Choose a job you love, and you will never have to work a day in your life. <br><i>-Confucius</i></p>";
 
@@ -95,7 +95,7 @@ var layout = function () {
                 m("nav", { class: "overlay-menu", id: "nav_overlay" }, [
                     m("ul",
                         links.map(function (link) {
-                            return m("li", { id: link.id, class:"nav_overlay_li"},
+                            return m("li", { id: link.id, class: "nav_overlay_li" },
                                 m("a", { href: link.url }, link.title));
                         })),
                 ]),
@@ -103,10 +103,12 @@ var layout = function () {
         ]),
         m("#header", [
             m(".header_image", m.trust(image("header")), [
-                //Displays Name
-                m("#header_name", m.trust(name)),
-                //Displays Role
-                m("#header_role", m.trust(role)),
+                m(".row", [
+                    //Displays Name
+                    m("#header_name", { class: ".col-xs-6" }, m.trust(name)),
+                    //Displays Role
+                    m("#header_role", { class: ".col-xs-6" }, m.trust(role)),
+                ]),
             ]),
         ]),
         //Main Sections of Page
@@ -191,14 +193,14 @@ $(function () {
         $(this).toggleClass('active');
         $('#overlay').toggleClass('open');
     });
-    $(".nav_overlay_li").children("a").click(function(){
+    $(".nav_overlay_li").children("a").click(function () {
         $('#toggle').toggleClass('active');
         $('#overlay').toggleClass('open');
     });
-    
-    
-    
-    
+
+
+
+
     $("#header_name p").wrapInner("<span>");
     $("#header_role p").wrapInner("<span>");
 
