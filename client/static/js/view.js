@@ -146,6 +146,7 @@ var layout = function () {
                         m.trust(icon("angular")),
                         m.trust(icon("node")),
                         m.trust(icon("mithril")),
+                        m.trust(icon("mysql")),
                     ]),
                 ]),
             ]),
@@ -252,7 +253,9 @@ $(function () {
 
     $("#mithril_icon").attr("title", "Mithril");
     $("#mithril_icon").attr("data-content", "Mithril is a client-side MVC framework used to organize code in a way that is easy to think about and to maintain.");
-
+    
+    $("#mysql_icon").attr("title", "MySQL");
+    $("#mysql_icon").attr("data-content", "MySQL is a popular choice of database for use in web applications, and is a central component of the widely used LAMP open-source web application software stack.");
 
 });
 
