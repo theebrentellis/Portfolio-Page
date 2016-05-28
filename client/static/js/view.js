@@ -32,6 +32,8 @@ var view_role = function () {
     // ]);
 };
 
+console.log(rolePicker());
+
 var name = "<p id='name' class='hidden .col-m-1'>Brent Ellis</p>";
 
 var role = "<p id='role' class='hidden .col-m-1'>>Software Developer</p>";
@@ -47,8 +49,6 @@ var languages = "<p>Languages</p>";
 var substance_style = "<p>Substance and Style</p>";
 
 var projects_text = "<p>Check out some of the projects that I've been working on!</p>";
-
-
 
 var contact_text_top = "<p>Like What You've Seen So Far?<br><span>I'm Currently Seeking New Opportunities.</span><br><span>Check out my social media profiles or send me an email.</span><br></p>";
 

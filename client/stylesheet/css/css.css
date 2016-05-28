@@ -3,9 +3,7 @@ body {
     margin-bottom: 20px;
 }
 
-
 /*Container & Body*/
-
 
 /*Section Wide Design*/
 
@@ -16,6 +14,11 @@ body {
     background-color: white;
     margin-left: auto;
     margin-right: auto;
+}
+.container a:hover:after,
+.container a:focus:after,
+.container a:active:after {
+    width: 100%;
 }
 
 hr {
@@ -31,223 +34,6 @@ hr {
 /*
     Header Section
 */
-
-#header_name p {
-    color: whitesmoke;
-    position: absolute;
-    top: 100px;
-    left: 100px;
-    font-size: 35px;
-}
-
-#header_name p span {
-    color: whitesmoke;
-    letter-spacing: 5px;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 15px;
-}
-
-#header_role p {
-    color: whitesmoke;
-    position: absolute;
-    top: 175px;
-    left: 200px;
-    font-size: 25px;
-}
-
-#header_role p span {
-    color: whitesmoke;
-    letter-spacing: 3px;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 15px;
-    top: 175px;
-    left: 100px;
-}
-
-/*
-    About Section
-*/
-
-#about_quote {
-    margin: 50px 100px 50px 100px;
-    text-align: center;    
-}
-
-#about_text {
-    margin-top: 50px;
-    margin-bottom: 100px;
-    margin-left: 30px;
-    margin-right: 30px;
-    text-align: center;
-}
-
-#about_text p {
-    line-height: 175%;
-}
-#about_me {
-    font-size: 40px;
-    font-weight: bold;
-}
-
-/*
-    Projects Section
-*/
-
-#tools_quote {
-    margin-top: 50px; 
-    margin-bottom: 50px;
-    margin-left: 30px;
-    margin-right: 30px;
-    text-align: center;
-}
-
-#tools_quote_text {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-#languages p,
-#substance_style p{
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-#substance_style_icons,
-#languages_icons {
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    align-items: center;
-}
-
-#substance_style_icons img,
-#languages_icons img {
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-    height: 100px;
-    width: auto;
-    text-align: center;
-    /*widows: auto;*/
-}
-
-.float_center {
-    left: -50%;
-    /* or right 50% */
-    text-align: center;
-}
-
-.float_center > .child {
-    position: relative;
-    /*left: 50%;*/
-}
-
-.clear {
-    clear: both;
-}
-
-#projects_text {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    text-align: center;
-}
-
-
-/*
-    Contact section
-*/
-
-#social_media_icons {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    align-items: center;
-}
-
-#social_media_icons img {
-    margin: 15px;
-    height: 80px;
-    width: auto;
-}
-
-#contact_text {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    text-align: center;
-}
-
-#contact_text p {
-    line-height: 200%;
-}
-
-
-/*
-    Footer Section
-*/
-
-#foot_image {
-    height: 100px;
-    background-image: url("../images/wood_foot_image.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#footer p {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    padding-left: 25px;
-    color: white;
-    font-size: 20px;
-}
-
-.container p {
-    font-size: 20px;
-}
-
-/*.container a {
-    display: inline-block;
-    position: relative;
-    text-align: center;
-    color: #FF5252;
-    text-decoration: none;
-    font-size: 20px;
-    overflow: hidden;
-    top: 5px;
-}*/
-
-/*.container a:after {
-    content: '';
-    position: absolute;
-    background: #FF5252;
-    height: 2px;
-    width: 0%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    left: 50%;
-    bottom: 0;
-    -webkit-transition: .35s ease;
-    transition: .35s ease;
-}*/
-
-.container a:hover:after,
-.container a:focus:after,
-.container a:active:after {
-    width: 100%;
-}
-
-
-/*h1 {
-  position: relative;
-  text-align: center;
-  font-family: 'Vollkorn', serif;
-}*/
-
 .button_container {
     position: fixed;
     top: 5%;
@@ -436,3 +222,214 @@ hr {
         left: 0;
     }
 }
+#header_name p {
+    color: whitesmoke;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    font-size: 35px;
+}
+
+#header_name p span {
+    color: whitesmoke;
+    letter-spacing: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+}
+
+#header_role p {
+    color: whitesmoke;
+    position: absolute;
+    top: 175px;
+    left: 200px;
+    font-size: 25px;
+}
+
+#header_role p span {
+    color: whitesmoke;
+    letter-spacing: 3px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    top: 175px;
+    left: 100px;
+}
+
+/*
+    About Section
+*/
+
+#about_quote {
+    margin: 50px 100px 50px 100px;
+    text-align: center;    
+}
+
+#about_text {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+}
+
+#about_text p {
+    line-height: 175%;
+}
+#about_me {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/*
+    Projects Section
+*/
+
+#tools_quote {
+    margin-top: 50px; 
+    margin-bottom: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+}
+
+#tools_quote_text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#languages p,
+#substance_style p{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#substance_style_icons,
+#languages_icons {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#substance_style_icons img,
+#languages_icons img {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    height: 100px;
+    width: auto;
+    text-align: center;
+    /*widows: auto;*/
+}
+
+.float_center {
+    left: -50%;
+    /* or right 50% */
+    text-align: center;
+}
+
+.float_center > .child {
+    position: relative;
+    /*left: 50%;*/
+}
+
+.clear {
+    clear: both;
+}
+
+#projects_text {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+/*
+    Contact section
+*/
+
+#social_media_icons {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#social_media_icons img {
+    margin: 15px;
+    height: 80px;
+    width: auto;
+}
+
+#contact_text {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+#contact_text p {
+    line-height: 200%;
+}
+
+/*
+    Footer Section
+*/
+
+#foot_image {
+    height: 100px;
+    background-image: url("../images/wood_foot_image.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#footer p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 25px;
+    color: white;
+    font-size: 20px;
+}
+
+.container p {
+    font-size: 20px;
+}
+
+/*.container a {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    color: #FF5252;
+    text-decoration: none;
+    font-size: 20px;
+    overflow: hidden;
+    top: 5px;
+}*/
+
+/*.container a:after {
+    content: '';
+    position: absolute;
+    background: #FF5252;
+    height: 2px;
+    width: 0%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 0;
+    -webkit-transition: .35s ease;
+    transition: .35s ease;
+}*/
+
+
+
+
+/*h1 {
+  position: relative;
+  text-align: center;
+  font-family: 'Vollkorn', serif;
+}*/
+
+
