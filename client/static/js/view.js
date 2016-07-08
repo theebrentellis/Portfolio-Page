@@ -130,6 +130,7 @@ var layout = function () {
             m("#tools_section", { class: "float_center" }, [
                 m("#languages", m.trust(languages), [
                     m("#languages_icons", { class: "child" }, [
+                        m.trust(icon("java")),
                         m.trust(icon("python")),
                         m.trust(icon("swift")),
                         m.trust(icon("javascript")),
@@ -218,6 +219,9 @@ $(function () {
     $("#Email_icon").wrap($('<a>', { title: "Email", href: "mailto:brent.ellis@live.com" }));
 
     //Popover Text For Project Icons
+    $("#java_icon").attr("title", "Java");
+    $("#java_icon").attr("data-content", "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers 'write once, run anywhere' (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation.");
+
     $("#python_icon").attr("title", "Python");
     $("#python_icon").attr("data-content", "Python is a widely used high-level, general-purpose, interpreted, dynamic programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java.");
 
