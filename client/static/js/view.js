@@ -1,19 +1,39 @@
 var MyApp = {};
 
-var links = [
-    { title: "home", url: "#", id: "home_id" },
-    { title: "about", url: "#about", id: "about_id" },
-    { title: "projects", url: "#projects", id: "projects_id" },
-    { title: "contact", url: "#contact", id: "contact_id" }
-];
+var links = [{
+    title: "home",
+    url: "#",
+    id: "home_id"
+}, {
+    title: "about",
+    url: "#about",
+    id: "about_id"
+}, {
+    title: "projects",
+    url: "#projects",
+    id: "projects_id"
+}, {
+    title: "contact",
+    url: "#contact",
+    id: "contact_id"
+}];
 
-var roles = [
-    { id: 1, title: ">Software Developer" },
-    { id: 2, title: ">Web Designer" },
-    { id: 3, title: ">Front End" },
-    { id: 4, title: ">Back End" },
-    { id: 5, title: ">Full Stack" }
-];
+var roles = [{
+    id: 1,
+    title: ">Software Developer"
+}, {
+    id: 2,
+    title: ">Web Designer"
+}, {
+    id: 3,
+    title: ">Front End"
+}, {
+    id: 4,
+    title: ">Back End"
+}, {
+    id: 5,
+    title: ">Full Stack"
+}];
 
 var rolePicker = function () {
     var roles = [">Software Developer", ">Front End", ">Back End", ">Full Stack"];
@@ -38,11 +58,11 @@ var name = "<p id='name' class='hidden .col-m-1'>Brent Ellis</p>";
 
 var role = "<p id='role' class='hidden .col-m-1'>>Software Developer</p>";
 
-var job_quote = "<span><hr/></span><p id='job_quote'>Choose a job you love, and you will never have to work a day in your life. <br><i>-Confucius</i></p>";
+var job_quote = "<span><hr/></span><blockquote id='job_quote'>Choose a job you love, and you will never have to work a day in your life.</blockquote><p><i>-Confucius</i></p><span><hr/></span>";
 
 var about_text = "<p id='about_me'>About Me!?!?</p><br><p>Who is this guy and why should I continue looking at this webpage?</p><span><p><small>(Also, what's the deal with the cliche quote?)</small></p></span><br><p>Hello World! My name is Brent Ellis and I'm a Full Stack Web Developer with a passion for creating professional high quality websites and applications. To some the quote may seem trite, however, I've never been in a profession so engaging that my work and interests coalesce in such a manner. When working with a new technology time ceases as I ponder the endless possibilities it illicits. The rapid expansion of technology provides limitless possibilities for what we can accomplish together. </p><br><p>When I'm not working on projects I like to golf and play soccer. I also like to explore new technologies and day dream about the endless possibilites they can provide. </p>";
 
-var tools_quote = "<p id='tools_quote_text'>Do not wait; the time will never be 'just right.' Start where you stand, and work with whatever tools you may have at your command, and better tools will be found as you go along. <br><i>-George Herbert</i></p><span><hr/></span>";
+var tools_quote = "<span><hr/></span><blockquote id='tools_quote_text'>Do not wait; the time will never be 'just right.' Start where you stand, and work with whatever tools you may have at your command, and better tools will be found as you go along.</blockquote><p><i>-George Herbert</i></p><span><hr/></span>";
 
 var languages = "<p>Languages</p>";
 
@@ -57,6 +77,14 @@ var contact_text = "<p>Like what you see so far? Interetsted in hiring me? Feel 
 var contact_text_bottom = "<p><span>What Can I Build For You?!</span></p>";
 
 var copyright = "<p>&copy; 2016 Brent Ellis</p>";
+
+var carouselCaption1 = "<p>A MEAN Fantasy Football Draft App</p>";
+
+var carouselCaption2 = "<p>A MEAN To Do List</p>";
+
+var carouselCaption3 = "<p>Another To Do List (iOS)</p>";
+
+var carouselCaption4 = "<p>Ellis Insurnace Brokers</p>";
 
 var random_text = "<p>Bacon ipsum dolor amet kevin tenderloin bacon short loin swine, pastrami landjaeger. Short loin sirloin rump leberkas, prosciutto cow alcatra ribeye tongue ground round pastrami. Ground round pork loin pastrami tongue cupim shank meatloaf, bresaola pork chop chuck tenderloin frankfurter beef tri-tip. Filet mignon meatloaf turducken bresaola pork chop, ham beef ribs corned beef. Tongue swine bresaola brisket doner tail. Corned beef pancetta strip steak drumstick sirloin pork ham pastrami. </p><br><p>Spare ribs corned beef flank hamburger. Sausage swine ham fatback. Boudin cupim brisket chuck flank. Shank drumstick shoulder pork loin, ball tip ham hock flank t-bone chuck pork belly corned beef salami. Picanha bresaola fatback meatloaf cupim meatball. Andouille beef cow, flank salami sirloin pork belly turducken jerky alcatra shoulder prosciutto. </p>";
 
@@ -77,7 +105,7 @@ function image(name) {
 //Mithril View For App
 var layout = function () {
     //Returns Container
-    return m("#container", { class: "container" }, [
+    return m(".container", [
 
         // 
         //Header Section
@@ -86,17 +114,35 @@ var layout = function () {
         //Navigation Overlay
         m("#navigation_overlay", [
             // m(".menu-trigger",{id:"toggle"}),
-            m(".button_container", { id: "toggle" }, [
-                m("span", { class: "top" }),
-                m("span", { class: "middle" }),
-                m("span", { class: "bottom" }),
+            m(".button_container", {
+                id: "toggle"
+            }, [
+                m("span", {
+                    class: "top"
+                }),
+                m("span", {
+                    class: "middle"
+                }),
+                m("span", {
+                    class: "bottom"
+                }),
             ]),
-            m(".overlay", { id: "overlay" }, [
-                m("nav", { class: "overlay-menu", id: "nav_overlay" }, [
+            m(".overlay", {
+                id: "overlay"
+            }, [
+                m("nav", {
+                    class: "overlay-menu",
+                    id: "nav_overlay"
+                }, [
                     m("ul",
                         links.map(function (link) {
-                            return m("li", { id: link.id, class: "nav_overlay_li" },
-                                m("a", { href: link.url }, link.title));
+                            return m("li", {
+                                    id: link.id,
+                                    class: "nav_overlay_li"
+                                },
+                                m("a", {
+                                    href: link.url
+                                }, link.title));
                         })),
                 ]),
             ]),
@@ -105,12 +151,17 @@ var layout = function () {
             m(".header_image", m.trust(image("header")), [
                 m(".row", [
                     //Displays Name
-                    m("#header_name", { class: ".col-xs-6" }, m.trust(name)),
+                    m("#header_name", {
+                        class: ".col-xs-6"
+                    }, m.trust(name)),
                     //Displays Role
-                    m("#header_role", { class: ".col-xs-6" }, m.trust(role)),
+                    m("#header_role", {
+                        class: ".col-xs-6"
+                    }, m.trust(role)),
                 ]),
             ]),
         ]),
+        
         //Main Sections of Page
         // 
         //About Section
@@ -125,11 +176,17 @@ var layout = function () {
         //Projects Section
         // 
         m("#projects", [
-            m("#projects_image", { id: "projects_image" }, m.trust(image("tools"))),
+            m("#projects_image", {
+                id: "projects_image"
+            }, m.trust(image("tools"))),
             m("#tools_quote", m.trust(tools_quote)),
-            m("#tools_section", { class: "float_center" }, [
+            m("#tools_section", {
+                class: "float_center"
+            }, [
                 m("#languages", m.trust(languages), [
-                    m("#languages_icons", { class: "child" }, [
+                    m("#languages_icons", {
+                        class: "child"
+                    }, [
                         m.trust(icon("java")),
                         m.trust(icon("python")),
                         m.trust(icon("swift")),
@@ -137,24 +194,88 @@ var layout = function () {
                     ]),
                 ]),
                 m("#substance_style", m.trust(substance_style), [
-                    m("#substance_style_icons", { class: "child" }, [
+                    m("#substance_style_icons", {
+                        class: "child"
+                    }, [
                         m.trust(icon("html")),
                         m.trust(icon("css3")),
                         m.trust(icon("jquery")),
                         m.trust(icon("bootstrap")),
-                        m.trust(icon("mongodb")),
-                        m.trust(icon("expressjs")),
                         m.trust(icon("angular")),
-                        m.trust(icon("node")),
                         m.trust(icon("mithril")),
+                        m.trust(icon("expressjs")),
+                        m.trust(icon("node")),
+                        m.trust(icon("socketio")),
+                        m.trust(icon("mongodb")),
                         m.trust(icon("mysql")),
                     ]),
                 ]),
             ]),
-            m("#projects_text", m.trust(projects_text)),
-            m("#projects_thumbnails", [
-                m(".row", [
-                    m(".col-md-3")
+            // m("#projects_text", m.trust(projects_text)),
+            m("#projectCarousel", {
+                class: "carousel slide",
+                "data-ride": "carousel"
+            }, [
+                m(".col-sm-4 .col-xs-6 col-centered", {
+                    id: "theCarousel"
+                }, [
+                    m("#projects_text", m.trust(projects_text)),
+                    m("ol", {
+                        class: "carousel-indicators",
+                    }, [
+                        m("li", {
+                            class: "slide-one active"
+                        }),
+                        m("li", {
+                            class: "slide-two"
+                        }),
+                        m("li", {
+                            class: "slide-three"
+                        }),
+                        m("li", {
+                            class: "slide-four"
+                        }),
+                    ]),
+                    m(".carousel-inner", [
+                        m(".active item", [
+                            m.trust(image("draftApp")),
+                            m(".carousel-caption", [
+                                // m.trust(carouselCaption1)
+                            ])
+                        ]),
+                        m(".item", [
+                            m.trust(image("toDoList")),
+                            m(".carousel-caption", [
+                                // m.trust(carouselCaption2)
+                            ])
+                        ]),
+                        m(".item", [
+                            m.trust(image("anotherToDoList")),
+                            m(".carousel-caption", [
+                                m.trust(carouselCaption3)
+                            ])
+                        ]),
+                        m(".item", [
+                            m.trust(icon("")),
+                            m(".carousel-caption", [
+                                m.trust(carouselCaption4)
+                            ])
+                        ]),
+                    ]),
+                    m("a", {
+                        class: "carousel-control left"
+                    }, [
+                        m("span", {
+                            class: "glyphicon glyphicon-chevron-left"
+                        })
+                    ]),
+                    m("a", {
+                        class: "carousel-control right"
+                    }, [
+                        m("span", {
+                            class: "glyphicon glyphicon-chevron-right"
+                        })
+                    ]),
                 ]),
             ]),
         ]),
@@ -186,7 +307,10 @@ var layout = function () {
 };
 
 //Load View and Sets Virtual DOM
-m.module(document.body, { controller: function () { }, view: layout });
+m.module(document.body, {
+    controller: function () {},
+    view: layout
+});
 
 
 //jQuery Adding Attributes & Wraps
@@ -200,9 +324,6 @@ $(function () {
         $('#overlay').toggleClass('open');
     });
 
-
-
-
     $("#header_name p").wrapInner("<span>");
     $("#header_role p").wrapInner("<span>");
 
@@ -212,11 +333,45 @@ $(function () {
 
 
     //Individual Icon Identifiers
-    $("#LinkedIn_icon").wrap($('<a>', { title: "LinkedIn", href: "http://www.linkedin.com/in/theebrentellis", target: "_blank" }));
-    $("#Github_icon").wrap($('<a>', { title: "Github", href: "http://www.github.com/theebrentellis", target: "_blank" }));
-    $("#Facebook_icon").wrap($('<a>', { title: "Facebook", href: "http://www.facebook.com/brent.ellis.3382", target: "_blank" }));
-    $("#Twitter_icon").wrap($('<a>', { title: "Twitter", href: "http://www.twitter.com/TheeBrentEllis?lang=en", target: "_blank" }));
-    $("#Email_icon").wrap($('<a>', { title: "Email", href: "mailto:brent.ellis@live.com" }));
+    $("#LinkedIn_icon").wrap($('<a>', {
+        title: "LinkedIn",
+        href: "http://www.linkedin.com/in/theebrentellis",
+        target: "_blank"
+    }));
+    $("#Github_icon").wrap($('<a>', {
+        title: "Github",
+        href: "http://www.github.com/theebrentellis",
+        target: "_blank"
+    }));
+    $("#Facebook_icon").wrap($('<a>', {
+        title: "Facebook",
+        href: "http://www.facebook.com/theebrentellis",
+        target: "_blank"
+    }));
+    $("#Twitter_icon").wrap($('<a>', {
+        title: "Twitter",
+        href: "http://www.twitter.com/TheeBrentEllis?lang=en",
+        target: "_blank"
+    }));
+    $("#Email_icon").wrap($('<a>', {
+        title: "Email",
+        href: "mailto:brent.ellis@live.com"
+    }));
+    $("#draftApp_image").wrap($("<a>", {
+        title: "A MEAN Fantasy Football Draft App",
+        href: "https://github.com/theebrentellis/Draft-App",
+        target: "_blank"
+    }));
+    $("#toDoList_image").wrap($("<a>", {
+        title: "A MEAN To Do List Web App",
+        href: "https://github.com/theebrentellis/To-Do-List-App-MEAN",
+        target: "_blank"
+    }));
+    $("#anotherToDoList_image").wrap($("<a>", {
+        title: "A To Do List iOS App",
+        href: "https://github.com/theebrentellis/Another-To-Do-List",
+        target: "_blank"
+    }));
 
     //Popover Text For Project Icons
     $("#java_icon").attr("title", "Java");
@@ -257,10 +412,12 @@ $(function () {
 
     $("#mithril_icon").attr("title", "Mithril");
     $("#mithril_icon").attr("data-content", "Mithril is a client-side MVC framework used to organize code in a way that is easy to think about and to maintain.");
-    
+
     $("#mysql_icon").attr("title", "MySQL");
     $("#mysql_icon").attr("data-content", "MySQL is a popular choice of database for use in web applications, and is a central component of the widely used LAMP open-source web application software stack.");
 
+    $("#socketio_icon").attr("title", "Socket.IO");
+    $("#socketio_icon").attr("data-content", "Socket.IO is a JavaScript library for realtime web applications. It enables realtime, bi-directional communication between web clients and servers.");
 });
 
 
@@ -269,9 +426,9 @@ function magic_off(image) {
     image = $(image);
     setTimeout(function () {
         image.removeClass('magictime puffIn');
-    }, [750]
-    );
+    }, [750]);
 }
+
 function animated_complete(image, animated) {
     image = $(image);
     setTimeout(function () {
@@ -312,4 +469,25 @@ $(document).ready(function () {
 
     //Activates jQuery Popover
     $('[data-toggle="popover"]').popover();
+
+    //Carousel Controls
+    $("#projectCarousel").carousel({
+        interval: false
+    });
+    $(".left").click(function () {
+        $("#projectCarousel").carousel('prev');
+    });
+    $(".right").click(function () {
+        $("#projectCarousel").carousel('next');
+    });
+    $(".slide-one").click(function () {
+        $("#projectCarousel").carousel(0);
+    });
+    $(".slide-two").click(function () {
+        $("#projectCarousel").carousel(1);
+    });
+    $(".slide-three").click(function () {
+        $("#projectCarousel").carousel(2);
+    });
+
 });
