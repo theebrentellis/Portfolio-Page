@@ -60,7 +60,7 @@ var role = "<p id='role' class='hidden .col-m-1'>>Software Developer</p>";
 
 var job_quote = "<span><hr/></span><blockquote id='job_quote'>Choose a job you love, and you will never have to work a day in your life.</blockquote><p><i>-Confucius</i></p><span><hr/></span>";
 
-var about_text = "<p id='about_me'>About Me!?!?</p><br><p>Who is this guy and why should I continue looking at this webpage?</p><span><p><small>(Also, what's the deal with the cliche quote?)</small></p></span><br><p>Hello World! My name is Brent Ellis and I'm a Full Stack Web Developer with a passion for creating professional high quality websites and applications. To some the quote may seem trite, however, I've never been in a profession so engaging that my work and interests coalesce in such a manner. When working with a new technology time ceases as I ponder the endless possibilities it illicits. The rapid expansion of technology provides limitless possibilities for what we can accomplish together. </p><br><p>When I'm not working on projects I like to golf and play soccer. I also like to explore new technologies and day dream about the endless possibilites they can provide. </p>";
+var about_text = "<p id='about_me'>About Me!?!?</p><br><p>Who is this guy and why should I continue looking at this webpage?</p><span><p><small>(Also, what's the deal with the cliche quotes?)</small></p></span><br><p>Hello World! My name is Brent Ellis and I'm a Full Stack Web Developer with a passion for creating professional high quality websites and applications. To some the quote may seem trite, however, I've never been in a profession so engaging that my work and interests coalesce in such a manner. When working with a new technology time ceases as I ponder the endless possibilities it illicits. The rapid expansion of technology provides limitless possibilities for what we can accomplish together. </p><br><p>When I'm not working on projects I like to golf and play soccer. I also like to explore new technologies and day dream about the endless possibilites they can provide. </p>";
 
 var tools_quote = "<span><hr/></span><blockquote id='tools_quote_text'>Do not wait; the time will never be 'just right.' Start where you stand, and work with whatever tools you may have at your command, and better tools will be found as you go along.</blockquote><p><i>-George Herbert</i></p><span><hr/></span>";
 
@@ -187,10 +187,10 @@ var layout = function () {
                     m("#languages_icons", {
                         class: "child"
                     }, [
-                        m.trust(icon("java")),
+                        m.trust(icon("javascript")),
                         m.trust(icon("python")),
                         m.trust(icon("swift")),
-                        m.trust(icon("javascript")),
+                        m.trust(icon("java")),
                     ]),
                 ]),
                 m("#substance_style", m.trust(substance_style), [

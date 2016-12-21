@@ -246,15 +246,15 @@ blockquote:after {
     position: absolute;
 }
 #header_name p {
-    top: 1%;
-    left: 10%;
-    /*font-size: 1.25em;*/
-    font-size: 125%;
+    top: 3%;
+    left: 30%;
+    /*font-size: 2em;*/
+    font-size: 200%;
 }
 #header_role p {
-    top: 2.25%;
-    left: 15%;
-    font-size: 1em;
+    top: 4.5%;
+    left: 40%;
+    font-size: 2em;
 }
 
 #header_name p span {
